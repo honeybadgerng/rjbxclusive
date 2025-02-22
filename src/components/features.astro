@@ -1,0 +1,70 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+
+const features = [
+  {
+    title: "Web, Mobile & Software Development",
+    description:
+      "We take pleasure in building stunning, award-winning website, Mobile Apps and Softwares that are easy to navigate, mobile-responsive, and functional across all platforms. Your new app will achieve the outcomes you’re seeking for thanks to our special methodology.",
+    icon: "bx:bx-code-alt",
+  },
+  {
+    title: "Web 3.0 Solutions",
+    description:
+      "We take pleasure in building stunning, award-winning websites that are easy to navigate, mobile-responsive, and functional across all platforms. Your new site will achieve the outcomes you’re seeking for thanks to our special methodology.",
+    icon: "bx:bxl-bitcoin",
+  },
+  {
+    title: "Digital Marketing",
+    description:
+      "We provide results-driven advertising and marketing initiatives for businesses of all sizes. Building and retaining loyal followers across social media platforms is a great way to maintain brand reputation. Our services include creative design, social media management, SEO, paid ad management, and content development",
+    icon: "bx:bxs-megaphone",
+  },
+  {
+    title: "Ai & Business Automation Integrations",
+    description:
+      "Embrace the future of efficiency and innovation with AI and Business Automation Integrations. AI Customer Support, VoIP & Automated Calls, Chatbot & Live Chat",
+    icon: "bx:bxs-bot",
+  },
+  {
+    title: "Graphics Design & Video Production",
+    description:
+      "Capture attention and tell your story visually with our Graphics Design & Video Production services. Branding & Asset Design, Promo Video Production, and Social Media Graphics ",
+    icon: "bx:bxs-palette",
+  },
+  
+  {
+    title: "On-demand Business Services & Consultancy",
+    description:
+      "Navigate business complexities with confidence through our On-demand Business Services & Consultancy.",
+    icon: "bx:bxs-briefcase",
+  },
+  
+];
+---
+
+<div class="mt-16 md:mt-0">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    Explore Our Array Of Innovative Services
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    Service Offerings
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
