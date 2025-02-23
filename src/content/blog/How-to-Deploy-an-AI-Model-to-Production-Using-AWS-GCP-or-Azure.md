@@ -23,7 +23,7 @@ tags:
   ]
 ---
 
-![AI, PredictiveAnalytics, MachineLearning, BusinessIntelligence, DataDriven](https://miro.medium.com/v2/resize:fit:1200/1*bvULuJZVLOei34FcvxS5hQ.png)
+![AI MachineLearning, MLOps, CloudComputing,AWS,GCP, Azure, AIModelDeployment,](https://miro.medium.com/v2/resize:fit:1200/1*bvULuJZVLOei34FcvxS5hQ.png)
 
 Deploying an AI model to production requires more than just training a model—it involves **scalability, monitoring, security, and automation**. This is where **MLOps (Machine Learning Operations)** and cloud services like **AWS, Google Cloud Platform (GCP), and Microsoft Azure** come in.
 
