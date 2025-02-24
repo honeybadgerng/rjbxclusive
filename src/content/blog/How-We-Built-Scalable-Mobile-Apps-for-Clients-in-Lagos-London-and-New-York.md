@@ -35,7 +35,7 @@ In this case study, we’ll share how we built robust, high-performing apps for 
 
 ## **1. Understanding the Client's Needs: Tailored Mobile Solutions**
 
-Each market; Lagos, London, and New York—has unique challenges:
+Each market; Lagos, London, and New York has unique challenges:
 
 - **Lagos:** Clients needed mobile apps that worked well in areas with **unstable internet connections**, focusing on **offline capabilities** and lightweight design.
 - **London:** The focus was on **high security** and **compliance** with GDPR while ensuring smooth integrations with existing enterprise systems.
