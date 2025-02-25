@@ -18,10 +18,9 @@ const { Content } = await entry.render();
 ---
 
 <Layout 
-  title={entry.data.title} 
-  description={entry.data.snippet} 
-  image={entry.data.image.src} 
-  imageAlt={entry.data.image.alt}
+title={entry.data.title}
+description={entry.data.snippet || "Read the latest from Xclusive"}
+image={entry.data.image?.src || "/fallback-image.jpg"}
 >
   <Container>
     <div class="mx-auto max-w-3xl mt-14">

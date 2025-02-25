@@ -5,24 +5,24 @@ import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource-variable/inter/index.css";
 import '@fontsource-variable/bricolage-grotesque';
 
-
-
 export interface Props {
   title: string;
+  description?: string;
+  image?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
-const resolvedImageWithDomain = new URL(
-  "/opengraph.jpg",
-  Astro.site
-).toString();
-
-const { title } = Astro.props;
+// Use props if available, otherwise fallback to default values
+const { title, description, image } = Astro.props;
 
 const makeTitle = title
-  ? title + " | " + "Xclusive"
-  : "RJB Xclusive - RJB Digital Company- Where Creativity Meets Strategy ";
+  ? `${title} | Xclusive`
+  : "RJB Xclusive - RJB Digital Company - Where Creativity Meets Strategy";
+
+const resolvedImageWithDomain = image
+  ? new URL(image, Astro.site).toString()
+  : new URL("/opengraph.jpg", Astro.site).toString();
 ---
 
 <!DOCTYPE html>
@@ -33,10 +33,9 @@ const makeTitle = title
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="RJB Xclusive is a team of experts in web and mobile app development, digital marketing, and web 3.0 solutions. Our goal is to help businesses in Nigeria, Africa and across the world take advantage of the latest technology to enhance their online presence and digitize their operations."
+      description={description || "RJB Xclusive: Experts in web and mobile app development, digital marketing, and Web 3.0 solutions."}
       canonical={canonicalURL}
       twitter={{
         creator: "@surjithctly",
@@ -46,8 +45,8 @@ const makeTitle = title
       openGraph={{
         basic: {
           url: canonicalURL,
-          type: "website",
-          title: `RJB Xclusive - RJB Digital Company`,
+          type: "article",
+          title: makeTitle,
           image: resolvedImageWithDomain,
         },
         image: {
@@ -60,12 +59,5 @@ const makeTitle = title
     <Navbar />
     <slot />
     <Footer />
-    <style is:global>
-      /* Improve Page speed */
-      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
-      img {
-        content-visibility: auto;
-      }
-    </style>
   </body>
 </html>

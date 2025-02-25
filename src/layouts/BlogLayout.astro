@@ -6,20 +6,21 @@ import Layout from "./Layout.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<Layout title={frontmatter.title}>
+<Layout 
+  title={frontmatter.title} 
+  description={frontmatter.description || "Read the latest from Xclusive"}
+  image={frontmatter.image || "/fallback-image.jpg"}
+>
   <Container>
     <div class="mx-auto max-w-[735px] mt-14">
       <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
         {frontmatter.category}
       </span>
-      <h1
-        class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight">
+      <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight">
         {frontmatter.title}
       </h1>
       <div class="flex gap-2 mt-3 items-center flex-wrap md:flex-nowrap">
-        <span class="text-gray-400">
-          {frontmatter.author}
-        </span>
+        <span class="text-gray-400">{frontmatter.author}</span>
         <span class="text-gray-400">•</span>
         <time class="text-gray-400" datetime={frontmatter.publishDate}>
           {getFormattedDate(frontmatter.publishDate)}
@@ -39,11 +40,9 @@ const { frontmatter } = Astro.props;
       <slot />
     </div>
     <div class="text-center mt-8">
-      <a
-        href="/blog"
-        class="bg-gray-100 px-5 py-3 rounded-md hover:bg-gray-200 transition"
-        >← Back to Blog</a
-      >
+      <a href="/blog" class="bg-gray-100 px-5 py-3 rounded-md hover:bg-gray-200 transition">
+        ← Back to Blog
+      </a>
     </div>
   </Container>
 </Layout>
